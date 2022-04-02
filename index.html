@@ -199,7 +199,18 @@
     })
     .reduce((total, vidSeconds) => total + vidSeconds);
 
-    console.log(seconds);
+    console.log(seconds); //total number of seconds
+    
+    let secondsLeft = seconds;
+    // Math.floor rounds down to whole hour
+    const hours = Math.floor(secondsLeft / 3600);
+    // % operator gives whats left of seconds after rounding down to whole hour
+    secondsLeft = secondsLeft % 3600;
+
+    const mins = Math.floor(secondsLeft / 60);
+    secondsLeft = secondsLeft % 60;
+
+    console.log(hours, mins, secondsLeft);
 
 
 </script>
